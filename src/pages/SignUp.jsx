@@ -3,16 +3,20 @@ import React from 'react'
 const SignUp = () => {
   return (
     <>
-    <div className='w-full h-screen'>
-        <img className='hidden sm:block w-full h-full object-cover' src="https://assets.nflxext.com/ffe/siteui/vlv3/7ca5b7c7-20aa-42a8-a278-f801b0d65fa1/e8317f86-f4e2-4330-8323-a66a2deff4ad/NG-en-20240326-popsignuptwoweeks-perspective_alpha_website_small.jpg" alt='/' />
-        <div className='bg-blaack/60 fixed top-0 left-0 w-full h-screen'></div>
-        <div className='fixed w-full px-4 py-24 z-50'></div>
-          <div className='max-w-[450px] h-[600px] mx-auto bg-black/75 text-white'>
-            <div className='max-w-[320px] mx-auto py-16'>
-              <h1>Sign Up</h1>
-            </div>
+      <div className='w-full h-screen'>
+        <img className='w-full h-full object-cover' src="https://assets.nflxext.com/ffe/siteui/vlv3/7ca5b7c7-20aa-42a8-a278-f801b0d65fa1/e8317f86-f4e2-4330-8323-a66a2deff4ad/NG-en-20240326-popsignuptwoweeks-perspective_alpha_website_small.jpg" alt='/' />
+        <div className='absolute inset-0 flex flex-col justify-center items-center z-10'>
+          <h1 className='font-bold text-4xl text-center text-white'>Unlimited movies, TV shows, and more</h1>
+          <div className='flex flex-col justify-center items-center w-[550px] py-4'>
+            <p className='text-white font-medium text-xl py-4'>Watch anywhere. Cancel anytime.</p>
+            <p className='text-white w-[400px] md:w-[550px] text-xl text-center'>Ready to watch? Enter your email to create or restart your membership.</p>
           </div>
-    </div>
+          <div className='space-x-2 space-y-2 text-center'>
+            <input className='p-4 w-[350px] sm:w-[350px] md:w-[400px] lg:w-[550px] bg-gray-600 rounded' type="email" placeholder='Email address' />
+            <button className='bg-red-700 p-4 text-white font-medium rounded'>{"Get Started >"}</button>
+          </div>
+        </div>
+      </div>
     </>
   )
 }
