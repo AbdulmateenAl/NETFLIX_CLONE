@@ -3,7 +3,7 @@ import { Main } from '../components/Main'
 import Row from '../components/Row'
 import requests from '../Requests'
 
-export const Home = () => {
+const Home = () => {
   return (
     <>
         <Main />
@@ -15,3 +15,5 @@ export const Home = () => {
     </>
   )
 }
+
+export default Home;
