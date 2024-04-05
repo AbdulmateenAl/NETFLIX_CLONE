@@ -1,6 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import { UserAuth } from '../context/AuthContext'
 
 const SignUp = () => {
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const {user, signUp} = UserAuth()
+  const navigate = useNavigate()
+  
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    try {
+      await signUp(email, password)
+      navigate('/')
+    } catch (error) {
+      console.log(error)
+    }
+  }
+  
   return (
     <>
       <div className='w-full h-screen'>
@@ -11,9 +28,13 @@ const SignUp = () => {
             <p className='text-white font-medium text-xl py-4'>Watch anywhere. Cancel anytime.</p>
             <p className='text-white w-[400px] md:w-[550px] text-xl text-center'>Ready to watch? Enter your email to create or restart your membership.</p>
           </div>
-          <div className='space-x-2 space-y-2 text-center'>
-            <input className='p-4 w-[350px] sm:w-[350px] md:w-[400px] lg:w-[550px] bg-gray-600 rounded' type="email" placeholder='Email address' />
-            <button className='bg-red-700 p-4 text-white font-medium rounded'>{"Get Started >"}</button>
+          <div className='flex flex-col space-y-2 text-center'>
+            <form onSubmit={handleSubmit} className='flex flex-col space-y-2 px-10'>
+              <input onChange={(e) => setEmail(e.target.value)} className='p-4 w-[350px] sm:w-[350px] md:w-[400px] lg:w-[550px] bg-gray-600 rounded' type="email" placeholder='Email address' />
+              <input onChange={(e) => setPassword(e.target.value)} className='p-4 w-[350px] sm:w-[350px] md:w-[400px] lg:w-[550px] bg-gray-600 rounded' type="password" placeholder='Paaword' />
+              <button className='bg-red-700 p-4 text-white font-medium rounded'>{"Sign Up"}</button>
+              <p className='text-gray-200'>Already subscribed to netflix? <Link to='/login' >Sign In</Link></p>
+            </form>
           </div>
         </div>
       </div>
