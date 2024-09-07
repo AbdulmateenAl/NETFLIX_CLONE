@@ -1,15 +1,14 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
 
 const Navbar = () => {
   return (
-    <div className='flex items-center justify-between p-4 z-20 w-full absolute'>
+    <div className='absolute z-20 flex items-center justify-between w-full p-4'>
         <Link to='/' >
-          <h1 className='text-red-600 text-4xl font-bold cursor-pointer z-10'>NETFLIX</h1>
+          <h1 className='z-10 text-4xl font-bold text-red-600 cursor-pointer'>NETFLIX</h1>
         </Link>
         <div>
           <Link to='/login'>
-            <button className='text-white pr-4'>Sign In</button>
+            <button className='pr-4 text-white'>Sign In</button>
           </Link>
           <Link to='/signup'>
             <button className='bg-red-600 px-4 py-2 rounded cursor=pointer text-white'>Sign Up</button>
